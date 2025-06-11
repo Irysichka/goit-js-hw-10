@@ -73,11 +73,16 @@ const timerId = setInterval(() => {
     const timerNow = userSelectedDate - new Date();
      if (timerNow <= 0) {
          clearInterval(timerId);
-         timerId = null;
+
       days.textContent = "00";
       hours.textContent = "00";
       minutes.textContent = "00";
-      seconds.textContent = "00";
+       seconds.textContent = "00";
+
+
+       input.disabled = false;
+       btnStart.disabled = true;
+       return;
      }
      const time = convertMs(timerNow);
 
